@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VQuicksightVisual > renders as expected 1`] = `
+<div
+  class="v-quicksight-visual"
+  id="v-quicksight-visual-1"
+/>
+`;

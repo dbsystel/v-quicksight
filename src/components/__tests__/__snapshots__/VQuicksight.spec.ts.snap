@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VQuicksight > renders as expected with custom CSS class 1`] = `
+<div
+  class="my-class"
+>
+  
+  
+</div>
+`;
+
+exports[`VQuicksight > renders as expected with default CSS class 1`] = `
+<div
+  class="v-quicksight"
+>
+  
+  
+</div>
+`;
