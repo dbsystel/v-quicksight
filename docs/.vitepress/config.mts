@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'v-quicksight',
   description: 'A vue3 wrapper for the amazon-quicksight-embedding-sdk',
+  base: '/v-quicksight/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
