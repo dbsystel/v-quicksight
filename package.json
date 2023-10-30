@@ -1,5 +1,8 @@
 {
   "name": "@dbsystel/v-quicksight",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.1",
   "description": "A vue3 wrapper for the amazon-quicksight-embedding-sdk",
   "repository": {
