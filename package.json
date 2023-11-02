@@ -42,6 +42,7 @@
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
+    "test": "npm run test:unit",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "build-only": "vite build",
