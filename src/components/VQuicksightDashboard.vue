@@ -121,12 +121,6 @@ watch(
 watch(
   () => props.parameters,
   (newValue) => {
-    console.log('UPDATE PARAMETERS', {
-      newValue,
-      dashboardFrame: dashboardFrame.value,
-      currentDashboard: changedDashboard.value,
-      dashboard: props.dashboard
-    })
     if (newValue && dashboardFrame.value) {
       // only set parameters when dashboard has not been changed.
       // Otherwise changes will be handled by navigateToDashboard
