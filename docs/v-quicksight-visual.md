@@ -30,8 +30,8 @@ All of the following properties are passed with their default values from the `a
 | **property** | **type**      | **required** | **default**                                            | **description**                                              |
 |--------------|---------------|--------------|--------------------------------------------------------|--------------------------------------------------------------|
 | `container`  | `string`      | no           | The default container created by the component itself. | The container where the `iframe` for embedding is created.   |
-| `id`         | `string`      | no           | `v-quicksight-dashboard-${nanoid(6)}`                  | The `id` for the created `iframe` container element (parent) |
-| `parameters` | `Parameter[]` | no           | `[]`                                                   | The parameters to be passed to the dashboard.                |
+| `id`         | `string`      | no           | `v-quicksight-visual-${nanoid(6)}`                     | The `id` for the created `iframe` container element (parent) |
+| `parameters` | `Parameter[]` | no           | `[]`                                                   | The parameters to be passed to the visual.                   |
 
 ## Events
 
