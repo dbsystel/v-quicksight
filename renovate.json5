@@ -1,35 +1,29 @@
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
-    "config:base",
-    "docker:enableMajor",
-    "group:allNonMajor",
-    ":combinePatchMinorReleases",
-    ":prConcurrentLimit10",
-    ":prHourlyLimitNone",
-    ":rebaseStalePrs",
-    ":separateMultipleMajorReleases"
-    ":automergeAll",
-    ":automergePr"
+    'config:base',
+    'docker:enableMajor',
+    'group:allNonMajor',
+    ':combinePatchMinorReleases',
+    ':prConcurrentLimit10',
+    ':prHourlyLimitNone',
+    ':rebaseStalePrs',
+    ':separateMultipleMajorReleases',
+    ':automergeAll',
+    ':automergePr'
   ],
   dependencyDashboardAutoclose: true,
-  dependencyDashboardLabels: [
-    "renovate"
-  ],
-  labels: [
-    "renovate"
-  ],
-  postUpdateOptions: [
-    "npmDedupe"
-  ],
+  dependencyDashboardLabels: ['renovate'],
+  labels: ['renovate'],
+  postUpdateOptions: ['npmDedupe'],
   platformAutomerge: true,
-  labels: ["Renovate"],
+  labels: ['Renovate'],
   autodiscover: true,
   lockFileMaintenance: {
     enabled: true,
     platformAutomerge: true,
     automerge: true,
-    schedule: ["after 11am and before 12pm"],
+    schedule: ['after 11am and before 12pm']
   },
-  packageRules: [],
+  packageRules: []
 }
