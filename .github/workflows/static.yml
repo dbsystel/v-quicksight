@@ -5,6 +5,9 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ['main']
+  pull_request:
+    branches:
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,6 +25,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - run: npm ci
+      - run: npm run test:unit
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -39,8 +53,9 @@ jobs:
           path: |
             docs/.vitepress/dist
 
-  # Deploy actually
+  # Deploy actually but only on main branch
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     environment:
       name: github-pages
