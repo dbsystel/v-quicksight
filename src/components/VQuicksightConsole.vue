@@ -2,13 +2,12 @@
 import type { VQuicksightConsoleContentOptions, VQuicksightFrameOptions } from '../types'
 import type {
   ConsoleContentOptions,
-  ConsoleFrame,
+  ConsoleExperience,
   EmbeddingContext,
   ExperienceFrameMetadata,
   FrameOptions,
-  SimpleChangeEvent,
-  SimpleMessageEvent
-} from 'amazon-quicksight-embedding-sdk/dist/types'
+  EmbeddingEvents
+} from 'amazon-quicksight-embedding-sdk'
 import { nanoid } from 'nanoid'
 import type { Ref } from 'vue'
 import { computed, inject, ref, watch } from 'vue'
@@ -30,16 +29,16 @@ const props = withDefaults(
 )
 
 const emit = defineEmits<{
-  (e: 'change', data: { changeEvent: SimpleChangeEvent; metadata?: ExperienceFrameMetadata }): void
+  (e: 'change', data: { changeEvent: EmbeddingEvents; metadata?: ExperienceFrameMetadata }): void
   (
     e: 'message',
-    data: { messageEvent: SimpleMessageEvent; experienceMetadata?: ExperienceFrameMetadata }
+    data: { messageEvent: EmbeddingEvents; experienceMetadata?: ExperienceFrameMetadata }
   ): void
 }>()
 
 const embeddingContext = inject<Ref<EmbeddingContext>>(EmbeddingContextInjectionKey)
 
-const consoleFrame = ref<ConsoleFrame>()
+const consoleFrame = ref<ConsoleExperience>()
 
 const containerId = computed(() => props.id || `v-quicksight-console-${nanoid(6)}`)
 const frameOptions = computed<FrameOptions>(() => {

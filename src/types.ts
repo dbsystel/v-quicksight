@@ -4,7 +4,7 @@ import type {
   VisualContentOptions,
   ConsoleContentOptions,
   QSearchContentOptions
-} from 'amazon-quicksight-embedding-sdk/dist/types'
+} from 'amazon-quicksight-embedding-sdk'
 
 export type VQuicksightFrameOptions = Omit<FrameOptions, 'onChange' | 'container'>
 export type VQuicksightDashboardContentOptions = Omit<DashboardContentOptions, 'onMessage'>

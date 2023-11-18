@@ -95,7 +95,7 @@ describe('VQuicksightVisual', () => {
   it('should call setParameters when the passed parameters are changing', async () => {
     const { visualFrame, component } = setupComponent()
     await nextTick() // wait until first setup is finished
-    await component.setProps({ parameters: contentOptions.parameters })
+    await component.setProps({ url: '', parameters: contentOptions.parameters })
     expect(visualFrame.setParameters).toHaveBeenCalledOnce()
     expect(visualFrame.setParameters).toHaveBeenCalledWith(contentOptions.parameters)
   })

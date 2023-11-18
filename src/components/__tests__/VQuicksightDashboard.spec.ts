@@ -110,7 +110,7 @@ describe('VQuicksightDashboard', () => {
   it('should call navigateToDashboard when the passed dashboard name changes', async () => {
     const { dashboardFrame, component } = setupComponent()
     await nextTick() // wait until first setup is finished
-    await component.setProps({ dashboard: 'another-dashboard' })
+    await component.setProps({ url: '', dashboard: 'another-dashboard' })
     expect(dashboardFrame.navigateToDashboard).toHaveBeenCalledOnce()
     expect(dashboardFrame.navigateToDashboard).toHaveBeenCalledWith('another-dashboard', {
       parameters: []
@@ -120,7 +120,7 @@ describe('VQuicksightDashboard', () => {
   it('should call setParameters when the passed parameters are changing', async () => {
     const { dashboardFrame, component } = setupComponent()
     await nextTick() // wait until first setup is finished
-    await component.setProps({ parameters: contentOptions.parameters })
+    await component.setProps({ url: '', parameters: contentOptions.parameters })
     expect(dashboardFrame.setParameters).toHaveBeenCalledOnce()
     expect(dashboardFrame.setParameters).toHaveBeenCalledWith(contentOptions.parameters)
   })
@@ -129,6 +129,7 @@ describe('VQuicksightDashboard', () => {
     const { dashboardFrame, component } = setupComponent()
     await nextTick() // wait until first setup is finished
     await component.setProps({
+      url: '',
       dashboard: 'another-dashboard',
       parameters: contentOptions.parameters
     })
