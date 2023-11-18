@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { createEmbeddingContext } from 'amazon-quicksight-embedding-sdk'
-import type {
-  EmbeddingContext,
-  ExperienceFrameMetadata,
-  SimpleChangeEvent
-} from 'amazon-quicksight-embedding-sdk/dist/types'
+import {
+  createEmbeddingContext,
+  type EmbeddingContext,
+  type ExperienceFrameMetadata,
+  type EmbeddingEvents
+} from 'amazon-quicksight-embedding-sdk'
 import { onBeforeMount, provide, ref } from 'vue'
 import { EmbeddingContextInjectionKey } from '../symbols'
 
@@ -18,7 +18,7 @@ withDefaults(
 )
 
 const emit = defineEmits<{
-  (e: 'change', data: { changeEvent: SimpleChangeEvent; metadata?: ExperienceFrameMetadata }): void
+  (e: 'change', data: { changeEvent: EmbeddingEvents; metadata?: ExperienceFrameMetadata }): void
 }>()
 
 const embeddingContext = ref<EmbeddingContext>()

@@ -5,11 +5,10 @@ import type {
   ExperienceFrameMetadata,
   FrameOptions,
   Parameter,
-  SimpleChangeEvent,
-  SimpleMessageEvent,
+  EmbeddingEvents,
   VisualContentOptions,
-  VisualFrame
-} from 'amazon-quicksight-embedding-sdk/dist/types'
+  VisualExperience
+} from 'amazon-quicksight-embedding-sdk'
 import { nanoid } from 'nanoid'
 import type { Ref } from 'vue'
 import { computed, inject, ref, watch } from 'vue'
@@ -33,16 +32,16 @@ const props = withDefaults(
 )
 
 const emit = defineEmits<{
-  (e: 'change', data: { changeEvent: SimpleChangeEvent; metadata?: ExperienceFrameMetadata }): void
+  (e: 'change', data: { changeEvent: EmbeddingEvents; metadata?: ExperienceFrameMetadata }): void
   (
     e: 'message',
-    data: { messageEvent: SimpleMessageEvent; experienceMetadata?: ExperienceFrameMetadata }
+    data: { messageEvent: EmbeddingEvents; experienceMetadata?: ExperienceFrameMetadata }
   ): void
 }>()
 
 const embeddingContext = inject<Ref<EmbeddingContext>>(EmbeddingContextInjectionKey)
 
-const visualFrame = ref<VisualFrame>()
+const visualFrame = ref<VisualExperience>()
 
 const containerId = computed(() => props.id || `v-quicksight-visual-${nanoid(6)}`)
 const frameOptions = computed<FrameOptions>(() => {
@@ -74,7 +73,7 @@ async function embedVisual(ctx: EmbeddingContext) {
   visualFrame.value = await ctx.embedVisual(frameOptions.value, contentOptions.value)
 }
 
-async function setParameters(frame: VisualFrame, parameters: Parameter[]) {
+async function setParameters(frame: VisualExperience, parameters: Parameter[]) {
   return await frame.setParameters(parameters)
 }
 

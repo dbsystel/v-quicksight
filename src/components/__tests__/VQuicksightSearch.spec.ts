@@ -89,7 +89,7 @@ describe('VQuicksightSearch', () => {
   it('should call setQuestion when the passed question name changes', async () => {
     const { searchFrame, component } = setupComponent()
     await nextTick() // wait until first setup is finished
-    await component.setProps({ question: 'How many apples were sold?' })
+    await component.setProps({ url: '', question: 'How many apples were sold?' })
     expect(searchFrame.setQuestion).toHaveBeenCalledOnce()
     expect(searchFrame.setQuestion).toHaveBeenCalledWith('How many apples were sold?')
   })
@@ -97,7 +97,7 @@ describe('VQuicksightSearch', () => {
   it('should call close when the question changes to a nullish value', async () => {
     const { searchFrame, component } = setupComponent({ question: 'How many apples were sold?' })
     await nextTick() // wait until first setup is finished
-    await component.setProps({ question: '' })
+    await component.setProps({ url: '', question: '' })
     expect(searchFrame.close).toHaveBeenCalled()
   })
 })

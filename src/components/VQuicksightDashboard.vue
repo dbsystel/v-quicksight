@@ -2,14 +2,13 @@
 import type { VQuicksightDashboardContentOptions, VQuicksightFrameOptions } from '../types'
 import type {
   DashboardContentOptions,
-  DashboardFrame,
+  DashboardExperience,
   EmbeddingContext,
   ExperienceFrameMetadata,
   FrameOptions,
   Parameter,
-  SimpleChangeEvent,
-  SimpleMessageEvent
-} from 'amazon-quicksight-embedding-sdk/dist/types'
+  EmbeddingEvents
+} from 'amazon-quicksight-embedding-sdk'
 import { nanoid } from 'nanoid'
 import type { Ref } from 'vue'
 import { computed, inject, ref, watch } from 'vue'
@@ -37,16 +36,16 @@ const props = withDefaults(
 )
 
 const emit = defineEmits<{
-  (e: 'change', data: { changeEvent: SimpleChangeEvent; metadata?: ExperienceFrameMetadata }): void
+  (e: 'change', data: { changeEvent: EmbeddingEvents; metadata?: ExperienceFrameMetadata }): void
   (
     e: 'message',
-    data: { messageEvent: SimpleMessageEvent; experienceMetadata?: ExperienceFrameMetadata }
+    data: { messageEvent: EmbeddingEvents; experienceMetadata?: ExperienceFrameMetadata }
   ): void
 }>()
 
 const embeddingContext = inject<Ref<EmbeddingContext>>(EmbeddingContextInjectionKey)
 
-const dashboardFrame = ref<DashboardFrame>()
+const dashboardFrame = ref<DashboardExperience>()
 const changedDashboard = ref<string>()
 
 const containerId = computed(() => props.id || `v-quicksight-dashboard-${nanoid(6)}`)
@@ -84,13 +83,13 @@ async function embedDashboard(ctx: EmbeddingContext, dashboard?: string) {
   }
 }
 
-async function navigateToDashboard(frame: DashboardFrame, dashboard: string) {
+async function navigateToDashboard(frame: DashboardExperience, dashboard: string) {
   await frame.navigateToDashboard(dashboard, {
     parameters: props.parameters
   })
 }
 
-async function setParameters(frame: DashboardFrame, parameters: Parameter[]) {
+async function setParameters(frame: DashboardExperience, parameters: Parameter[]) {
   return await frame.setParameters(parameters)
 }
 
