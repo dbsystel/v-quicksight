@@ -31,8 +31,7 @@
       groupSlug: 'all-minor-patch',
       matchPackagePatterns: ['*'],
       matchUpdateTypes: ['minor', 'patch'],
-      // handle amazon-quicksight-embedding-sdk separately since it's may breaking
-      excludePackageNames: ['amazon-quicksight-embedding-sdk']
+      updateLockFiles: true
     }
   ]
 }
