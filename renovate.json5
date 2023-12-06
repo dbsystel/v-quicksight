@@ -25,13 +25,5 @@
     automerge: true,
     schedule: ['after 11am and before 12pm']
   },
-  packageRules: [
-    {
-      groupName: 'all non-major dependencies',
-      groupSlug: 'all-minor-patch',
-      matchPackagePatterns: ['*'],
-      matchUpdateTypes: ['minor', 'patch'],
-      updateLockFiles: true
-    }
-  ]
+  packageRules: []
 }
