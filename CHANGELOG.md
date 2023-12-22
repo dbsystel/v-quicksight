@@ -1,5 +1,13 @@
 
 
+## [0.2.2](https://github.com/dbsystel/v-quicksight/compare/0.2.1...0.2.2) (2023-12-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nanoid to v5.0.4 ([017d260](https://github.com/dbsystel/v-quicksight/commit/017d260c62ae33962bd773404c10d610590d2a9c))
+* **deps:** update dependency vue to v3.3.13 ([f1f01c6](https://github.com/dbsystel/v-quicksight/commit/f1f01c6c8a163b51b3def840e8140f6c2eeca2d3))
+
 ## [0.2.1](https://github.com/dbsystel/v-quicksight/compare/0.2.0...0.2.1) (2023-11-18)
 
 # [0.2.0](https://github.com/dbsystel/v-quicksight/compare/0.1.0...0.2.0) (2023-11-02)
