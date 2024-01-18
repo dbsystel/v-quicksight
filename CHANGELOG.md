@@ -1,5 +1,15 @@
 
 
+## [0.2.3](https://github.com/dbsystel/v-quicksight/compare/0.2.2...0.2.3) (2024-01-18)
+
+
+### Bug Fixes
+
+* **deps:** pin dependency @vitest/coverage-v8 to v1.2.1 ([ef359cc](https://github.com/dbsystel/v-quicksight/commit/ef359cc8030efba7fce7a278f576e30fb3d41697))
+* **deps:** update dependency amazon-quicksight-embedding-sdk to v2.6.0 ([1a8a295](https://github.com/dbsystel/v-quicksight/commit/1a8a2957d869850809a81a8e592a6157ae78dff4))
+* **deps:** update dependency vue to v3.4.14 ([ea3b753](https://github.com/dbsystel/v-quicksight/commit/ea3b75310e46304ee5fda71ae2808cc90b43f40f))
+* **deps:** upgrade dependency @tsconfig/node18 to @tsconfig/node20 ([ad62f14](https://github.com/dbsystel/v-quicksight/commit/ad62f14b948f8f1a8829581970d0fa2ef5e6104f))
+
 ## [0.2.2](https://github.com/dbsystel/v-quicksight/compare/0.2.1...0.2.2) (2023-12-22)
 
 
