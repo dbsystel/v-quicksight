@@ -1,5 +1,12 @@
 
 
+# [0.3.0](https://github.com/dbsystel/v-quicksight/compare/0.2.3...0.3.0) (2024-01-18)
+
+
+### Features
+
+* allow to pass a theme ARN or an overriding ThemeConfiguration ([0d8f45a](https://github.com/dbsystel/v-quicksight/commit/0d8f45a5a2ff37dc247f97a4809c03afac134734))
+
 ## [0.2.3](https://github.com/dbsystel/v-quicksight/compare/0.2.2...0.2.3) (2024-01-18)
 
 
