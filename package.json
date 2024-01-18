@@ -65,7 +65,7 @@
     "not dead"
   ],
   "dependencies": {
-    "amazon-quicksight-embedding-sdk": "2.5.0",
+    "amazon-quicksight-embedding-sdk": "2.6.0",
     "nanoid": "5.0.4",
     "vue": "3.3.13"
   },
