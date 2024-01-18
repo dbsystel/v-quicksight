@@ -1,6 +1,7 @@
 import VQuicksightVisual from '../VQuicksightVisual.vue'
 import { EmbeddingContextInjectionKey } from '../../symbols'
-import { mount } from '@vue/test-utils'
+import type { ThemeConfiguration } from '../../types'
+import { flushPromises, mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { nextTick, ref } from 'vue'
 
@@ -26,7 +27,9 @@ const contentOptions = {
 describe('VQuicksightVisual', () => {
   function setupComponent(props: Record<string, any> = {}) {
     const visualFrame = {
-      setParameters: vi.fn().mockResolvedValue({ success: true })
+      setParameters: vi.fn().mockResolvedValue({ success: true }),
+      setTheme: vi.fn().mockResolvedValue({ success: true }),
+      setThemeOverride: vi.fn().mockResolvedValue({ success: true })
     }
     const embeddingContext = {
       embedVisual: vi.fn().mockResolvedValue(visualFrame)
@@ -98,5 +101,63 @@ describe('VQuicksightVisual', () => {
     await component.setProps({ url: '', parameters: contentOptions.parameters })
     expect(visualFrame.setParameters).toHaveBeenCalledOnce()
     expect(visualFrame.setParameters).toHaveBeenCalledWith(contentOptions.parameters)
+  })
+
+  describe('when setting a theme', () => {
+    it('should set a theme ARN', async () => {
+      const theme = 'arn:aws:quicksight::aws:theme/SEASIDE'
+      const { visualFrame } = setupComponent({ theme })
+      await flushPromises()
+      expect(visualFrame.setTheme).toHaveBeenCalledOnce()
+      expect(visualFrame.setTheme).toHaveBeenCalledWith(theme)
+    })
+
+    it('should set a theme ARN once prop changes', async () => {
+      const theme = 'arn:aws:quicksight::aws:theme/SEASIDE'
+      const { visualFrame, component } = setupComponent({ theme })
+      await flushPromises()
+      await component.setProps({
+        theme
+      })
+      await flushPromises()
+      expect(visualFrame.setTheme).toHaveBeenCalledOnce()
+      expect(visualFrame.setTheme).toHaveBeenCalledWith(theme)
+    })
+
+    it('should set an overriding theme config', async () => {
+      const theme: ThemeConfiguration = {
+        UIColorPalette: {
+          PrimaryForeground: '#abcdef',
+          SecondaryForeground: '#123456'
+        },
+        DataColorPalette: {
+          Colors: ['#abcdef', '#123456']
+        }
+      }
+      const { visualFrame } = setupComponent({ theme })
+      await flushPromises()
+      expect(visualFrame.setThemeOverride).toHaveBeenCalledOnce()
+      expect(visualFrame.setThemeOverride).toHaveBeenCalledWith(theme)
+    })
+
+    it('should set an overriding theme config once prop changes', async () => {
+      const theme: ThemeConfiguration = {
+        UIColorPalette: {
+          PrimaryForeground: '#abcdef',
+          SecondaryForeground: '#123456'
+        },
+        DataColorPalette: {
+          Colors: ['#abcdef', '#123456']
+        }
+      }
+      const { visualFrame, component } = setupComponent({ theme })
+      await flushPromises()
+      await component.setProps({
+        theme
+      })
+      await flushPromises()
+      expect(visualFrame.setThemeOverride).toHaveBeenCalledOnce()
+      expect(visualFrame.setThemeOverride).toHaveBeenCalledWith(theme)
+    })
   })
 })

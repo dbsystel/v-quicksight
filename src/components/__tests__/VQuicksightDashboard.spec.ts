@@ -1,6 +1,7 @@
 import VQuicksightDashboard from '../VQuicksightDashboard.vue'
 import { EmbeddingContextInjectionKey } from '../../symbols'
-import { mount } from '@vue/test-utils'
+import type { ThemeConfiguration } from '../../types'
+import { flushPromises, mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { nextTick, ref } from 'vue'
 
@@ -39,7 +40,9 @@ describe('VQuicksightDashboard', () => {
   function setupComponent(props: Record<string, any> = {}) {
     const dashboardFrame = {
       setParameters: vi.fn().mockResolvedValue({ success: true }),
-      navigateToDashboard: vi.fn().mockResolvedValue({ success: true })
+      navigateToDashboard: vi.fn().mockResolvedValue({ success: true }),
+      setTheme: vi.fn().mockResolvedValue({ success: true }),
+      setThemeOverride: vi.fn().mockResolvedValue({ success: true })
     }
     const embeddingContext = {
       embedDashboard: vi.fn().mockResolvedValue(dashboardFrame)
@@ -136,6 +139,64 @@ describe('VQuicksightDashboard', () => {
     expect(dashboardFrame.navigateToDashboard).toHaveBeenCalledOnce()
     expect(dashboardFrame.navigateToDashboard).toHaveBeenCalledWith('another-dashboard', {
       parameters: contentOptions.parameters
+    })
+  })
+
+  describe('when setting a theme', () => {
+    it('should set a theme ARN', async () => {
+      const theme = 'arn:aws:quicksight::aws:theme/SEASIDE'
+      const { dashboardFrame } = setupComponent({ theme })
+      await flushPromises()
+      expect(dashboardFrame.setTheme).toHaveBeenCalledOnce()
+      expect(dashboardFrame.setTheme).toHaveBeenCalledWith(theme)
+    })
+
+    it('should set a theme ARN once prop changes', async () => {
+      const theme = 'arn:aws:quicksight::aws:theme/SEASIDE'
+      const { dashboardFrame, component } = setupComponent({ theme })
+      await flushPromises()
+      await component.setProps({
+        theme
+      })
+      await flushPromises()
+      expect(dashboardFrame.setTheme).toHaveBeenCalledOnce()
+      expect(dashboardFrame.setTheme).toHaveBeenCalledWith(theme)
+    })
+
+    it('should set an overriding theme config', async () => {
+      const theme: ThemeConfiguration = {
+        UIColorPalette: {
+          PrimaryForeground: '#abcdef',
+          SecondaryForeground: '#123456'
+        },
+        DataColorPalette: {
+          Colors: ['#abcdef', '#123456']
+        }
+      }
+      const { dashboardFrame } = setupComponent({ theme })
+      await flushPromises()
+      expect(dashboardFrame.setThemeOverride).toHaveBeenCalledOnce()
+      expect(dashboardFrame.setThemeOverride).toHaveBeenCalledWith(theme)
+    })
+
+    it('should set an overriding theme config once prop changes', async () => {
+      const theme: ThemeConfiguration = {
+        UIColorPalette: {
+          PrimaryForeground: '#abcdef',
+          SecondaryForeground: '#123456'
+        },
+        DataColorPalette: {
+          Colors: ['#abcdef', '#123456']
+        }
+      }
+      const { dashboardFrame, component } = setupComponent({ theme })
+      await flushPromises()
+      await component.setProps({
+        theme
+      })
+      await flushPromises()
+      expect(dashboardFrame.setThemeOverride).toHaveBeenCalledOnce()
+      expect(dashboardFrame.setThemeOverride).toHaveBeenCalledWith(theme)
     })
   })
 })

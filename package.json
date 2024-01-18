@@ -65,9 +65,10 @@
     "not dead"
   ],
   "dependencies": {
+    "@aws-sdk/client-quicksight": "^3.490.0",
     "amazon-quicksight-embedding-sdk": "2.6.0",
     "nanoid": "5.0.4",
-    "vue": "3.4.14"
+    "vue": "^3.0.0"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

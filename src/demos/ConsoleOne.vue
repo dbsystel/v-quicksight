@@ -12,10 +12,6 @@ function log($event: any) {
 
 <template>
   <v-quicksight>
-    <v-quicksight-console
-      class="report-visual"
-      :url="quickSightEmbedUrl"
-      @change="log"
-    ></v-quicksight-console>
+    <v-quicksight-console class="report-visual" :url="quickSightEmbedUrl" @change="log" />
   </v-quicksight>
 </template>

@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import type { VQuicksightFrameOptions, VQuicksightVisualContentOptions } from '../types'
+import type {
+  ThemeConfiguration,
+  VQuicksightFrameOptions,
+  VQuicksightVisualContentOptions
+} from '../types'
 import type {
   EmbeddingContext,
   ExperienceFrameMetadata,
@@ -20,6 +24,8 @@ const props = withDefaults(
       VQuicksightVisualContentOptions & {
         container?: string | HTMLElement // override from FrameOptions and make it optional
         id?: string
+        /** pass a theme ARN or a Theme override configuration */
+        theme?: string | ThemeConfiguration
       }
   >(),
   {
@@ -71,10 +77,21 @@ const contentOptions = computed<VisualContentOptions>(() => {
 
 async function embedVisual(ctx: EmbeddingContext) {
   visualFrame.value = await ctx.embedVisual(frameOptions.value, contentOptions.value)
+  if (props.theme) {
+    setTheme(visualFrame.value, props.theme)
+  }
 }
 
 async function setParameters(frame: VisualExperience, parameters: Parameter[]) {
   return await frame.setParameters(parameters)
+}
+
+async function setTheme(frame: VisualExperience, theme: string | ThemeConfiguration) {
+  if (typeof theme === 'string') {
+    await frame.setTheme(theme)
+  } else {
+    await frame.setThemeOverride(theme)
+  }
 }
 
 watch(
@@ -99,6 +116,17 @@ watch(
     }
   },
   { deep: true }
+)
+
+watch(
+  () => props.theme,
+  async (newValue, oldValue) => {
+    if (!visualFrame.value || !newValue || newValue === oldValue) {
+      return
+    }
+    setTheme(visualFrame.value, newValue)
+  },
+  { immediate: true }
 )
 </script>
 

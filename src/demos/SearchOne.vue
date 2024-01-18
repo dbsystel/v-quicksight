@@ -19,6 +19,6 @@ function log($event: any) {
       :url="quickSightEmbedUrl"
       :search="search"
       @change="log"
-    ></v-quicksight-search>
+    />
   </v-quicksight>
 </template>

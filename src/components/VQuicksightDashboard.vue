@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import type { VQuicksightDashboardContentOptions, VQuicksightFrameOptions } from '../types'
+import type {
+  ThemeConfiguration,
+  VQuicksightDashboardContentOptions,
+  VQuicksightFrameOptions
+} from '../types'
 import type {
   DashboardContentOptions,
   DashboardExperience,
@@ -21,6 +25,8 @@ const props = withDefaults(
         container?: string | HTMLElement // override from FrameOptions and make it optional
         dashboard?: string
         id?: string
+        /** pass a theme ARN or a Theme override configuration */
+        theme?: string | ThemeConfiguration
       }
   >(),
   {
@@ -81,6 +87,9 @@ async function embedDashboard(ctx: EmbeddingContext, dashboard?: string) {
   if (dashboard) {
     navigateToDashboard(dashboardFrame.value, dashboard)
   }
+  if (props.theme) {
+    setTheme(dashboardFrame.value, props.theme)
+  }
 }
 
 async function navigateToDashboard(frame: DashboardExperience, dashboard: string) {
@@ -91,6 +100,14 @@ async function navigateToDashboard(frame: DashboardExperience, dashboard: string
 
 async function setParameters(frame: DashboardExperience, parameters: Parameter[]) {
   return await frame.setParameters(parameters)
+}
+
+async function setTheme(frame: DashboardExperience, theme: string | ThemeConfiguration) {
+  if (typeof theme === 'string') {
+    await frame.setTheme(theme)
+  } else {
+    await frame.setThemeOverride(theme)
+  }
 }
 
 watch(
@@ -133,6 +150,17 @@ watch(
     }
   },
   { deep: true }
+)
+
+watch(
+  () => props.theme,
+  async (newValue, oldValue) => {
+    if (!dashboardFrame.value || !newValue || newValue === oldValue) {
+      return
+    }
+    setTheme(dashboardFrame.value, newValue)
+  },
+  { immediate: true }
 )
 </script>
 

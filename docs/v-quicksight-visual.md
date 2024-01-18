@@ -27,11 +27,12 @@ All of the following properties are passed with their default values from the `a
 
 **Additional and important properties**
 
-| **property** | **type**      | **required** | **default**                                            | **description**                                              |
-|--------------|---------------|--------------|--------------------------------------------------------|--------------------------------------------------------------|
-| `container`  | `string`      | no           | The default container created by the component itself. | The container where the `iframe` for embedding is created.   |
-| `id`         | `string`      | no           | `v-quicksight-visual-${nanoid(6)}`                     | The `id` for the created `iframe` container element (parent) |
-| `parameters` | `Parameter[]` | no           | `[]`                                                   | The parameters to be passed to the visual.                   |
+| **property** | **type**                         | **required** | **default**                                            | **description**                                                                                                                                            |
+|--------------|----------------------------------|--------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `container`  | `string`                         | no           | The default container created by the component itself. | The container where the `iframe` for embedding is created.                                                                                                 |
+| `id`         | `string`                         | no           | `v-quicksight-visual-${nanoid(6)}`                     | The `id` for the created `iframe` container element (parent)                                                                                               |
+| `parameters` | `Parameter[]`                    | no           | `[]`                                                   | The parameters to be passed to the visual.                                                                                                                 |
+| `theme`      | `string` \| `ThemeConfiguration` | no           | -                                                      | The Theme ARN to use or an overriding [`ThemeConfiguration`](https://docs.aws.amazon.com/de_de/quicksight/latest/APIReference/API_ThemeConfiguration.html) |
 
 ## Events
 
