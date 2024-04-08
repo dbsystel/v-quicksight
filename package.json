@@ -65,7 +65,7 @@
     "not dead"
   ],
   "dependencies": {
-    "@aws-sdk/client-quicksight": "^3.490.0",
+    "@aws-sdk/client-quicksight": "^3.550.0",
     "amazon-quicksight-embedding-sdk": "2.6.0",
     "nanoid": "5.0.7",
     "vue": "^3.0.0"
@@ -75,7 +75,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.43.0",
-    "@release-it/conventional-changelog": "^8.0.0",
+    "@release-it/conventional-changelog": "^8.0.1",
     "@rushstack/eslint-patch": "1.10.1",
     "@tsconfig/node20": "20.1.4",
     "@types/jsdom": "21.1.6",
