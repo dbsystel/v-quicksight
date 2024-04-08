@@ -50,7 +50,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint-fix": "npm run lint -- --fix",
     "prettier": "prettier --write .",
-    "prepare": "husky install",
+    "prepare": "husky",
     "release": "release-it",
     "release:pre": "npm run release -- --preRelease",
     "release:rc": "npm run release -- --preRelease",
