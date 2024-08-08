@@ -1,5 +1,32 @@
 
 
+# [0.4.0](https://github.com/dbsystel/v-quicksight/compare/0.3.2...0.4.0) (2024-08-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.609.0 ([c08b2c9](https://github.com/dbsystel/v-quicksight/commit/c08b2c9911596c65bb5dd76dd43e0deda2a2a8a8))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.613.0 ([162a927](https://github.com/dbsystel/v-quicksight/commit/162a9273a284053d1a829285494ffbd336fccf21))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.614.0 ([8f1e8a6](https://github.com/dbsystel/v-quicksight/commit/8f1e8a6fbb24e578cce0487bf2e99e9104effc99))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.615.0 ([1825979](https://github.com/dbsystel/v-quicksight/commit/18259795d42bcf2bb3e089b8e1e3bb5299a20827))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.616.0 ([017ab91](https://github.com/dbsystel/v-quicksight/commit/017ab9119cbfc6530fa572873212298c627ee4c4))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.620.0 ([d3b85ca](https://github.com/dbsystel/v-quicksight/commit/d3b85cabb1d99600b662913eb8fd6bf7ff8ccd72))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.620.1 ([ae3bda8](https://github.com/dbsystel/v-quicksight/commit/ae3bda862148a8e8f40d25f6d7fb82f99a80fa1d))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.621.0 ([6ca83ca](https://github.com/dbsystel/v-quicksight/commit/6ca83ca81315dae5c21e1a5dc74cca90bdcf8f02))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.622.0 ([6a6a81a](https://github.com/dbsystel/v-quicksight/commit/6a6a81a4253e1def6ecfcab5c22ed4e29e059d0d))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.623.0 ([598525f](https://github.com/dbsystel/v-quicksight/commit/598525f2751a54070b9ff214ba7163a42a99d405))
+* **deps:** update dependency @aws-sdk/client-quicksight to v3.624.0 ([cc13cb6](https://github.com/dbsystel/v-quicksight/commit/cc13cb6b0bef9b629db5c0b5374345932b7d574a))
+* **deps:** update dependency vue to v3.4.32 ([ff42295](https://github.com/dbsystel/v-quicksight/commit/ff42295407d5f5cff46c82d9ce952c09216c4212))
+* **deps:** update dependency vue to v3.4.33 ([1ecdbe7](https://github.com/dbsystel/v-quicksight/commit/1ecdbe717f4284fe2b5a6b09e252f217aa53c41b))
+* **deps:** update dependency vue to v3.4.34 ([3d1097e](https://github.com/dbsystel/v-quicksight/commit/3d1097e2020f857d77acce044f933d5e507c0a79))
+* **deps:** update dependency vue to v3.4.36 ([f056f6b](https://github.com/dbsystel/v-quicksight/commit/f056f6b4d29fc9f46b5f83b675b3ba7492c7ba81))
+* **deps:** update dependency vue to v3.4.37 ([e363ce8](https://github.com/dbsystel/v-quicksight/commit/e363ce82a4d0cf6c062b92efdb426d7d8c6746ae))
+
+
+### Features
+
+* **v-quicksight-generative-qna:** add new component v-quicksight-generative-qna ([688685c](https://github.com/dbsystel/v-quicksight/commit/688685c8de0068dac966d9843a0ff0a2f87f9656))
+
 ## [0.3.2](https://github.com/dbsystel/v-quicksight/compare/0.3.1...0.3.2) (2024-06-30)
 
 
