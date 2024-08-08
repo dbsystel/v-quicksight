@@ -27,7 +27,8 @@ export default defineConfig({
           { text: 'v-quicksight-dashboard', link: '/v-quicksight-dashboard' },
           { text: 'v-quicksight-visual', link: '/v-quicksight-visual' },
           { text: 'v-quicksight-console', link: '/v-quicksight-console' },
-          { text: 'v-quicksight-search', link: '/v-quicksight-search' }
+          { text: 'v-quicksight-search', link: '/v-quicksight-search' },
+          { text: 'v-quicksight-generative-qna', link: '/v-quicksight-generative-qna' },
         ]
       }
     ],

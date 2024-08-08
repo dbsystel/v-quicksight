@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VQuicksightGenerativeQnA > renders as expected 1`] = `
+<div
+  class="v-quicksight-generative-qna"
+  id="v-quicksight-qna-1"
+/>
+`;
