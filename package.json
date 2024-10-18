@@ -83,7 +83,7 @@
     "@vitejs/plugin-vue": "5.1.4",
     "@vitest/coverage-v8": "2.1.2",
     "@vue/eslint-config-prettier": "10.0.0",
-    "@vue/eslint-config-typescript": "13.0.0",
+    "@vue/eslint-config-typescript": "14.1.1",
     "@vue/test-utils": "2.4.6",
     "@vue/tsconfig": "0.5.1",
     "eslint": "8.57.1",
