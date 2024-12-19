@@ -67,7 +67,7 @@
   "dependencies": {
     "@aws-sdk/client-quicksight": "^3.550.0",
     "amazon-quicksight-embedding-sdk": "2.8.0",
-    "nanoid": "5.0.8",
+    "nanoid": "5.0.9",
     "vue": "^3.0.0"
   },
   "peerDependencies": {
