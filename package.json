@@ -90,7 +90,7 @@
     "eslint-plugin-vue": "9.33.0",
     "husky": "9.1.7",
     "jsdom": "26.1.0",
-    "npm-run-all2": "7.0.2",
+    "npm-run-all2": "8.0.1",
     "prettier": "3.5.3",
     "release-it": "17.11.0",
     "typescript": "5.8.2",
