@@ -74,7 +74,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "1.53.0",
+    "@playwright/test": "1.53.1",
     "@release-it/conventional-changelog": "^9.0.0",
     "@rushstack/eslint-patch": "1.11.0",
     "@tsconfig/node20": "20.1.6",
