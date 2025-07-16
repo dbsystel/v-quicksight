@@ -98,6 +98,6 @@
     "vite-plugin-dts": "4.5.4",
     "vitepress": "1.6.3",
     "vitest": "3.2.4",
-    "vue-tsc": "2.2.12"
+    "vue-tsc": "3.0.1"
   }
 }
