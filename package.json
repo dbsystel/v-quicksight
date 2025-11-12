@@ -76,7 +76,7 @@
   "devDependencies": {
     "@playwright/test": "1.56.1",
     "@release-it/conventional-changelog": "^9.0.0",
-    "@rushstack/eslint-patch": "1.14.1",
+    "@rushstack/eslint-patch": "1.15.0",
     "@tsconfig/node20": "20.1.6",
     "@types/jsdom": "27.0.0",
     "@types/node": "24.10.1",
