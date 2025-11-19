@@ -80,7 +80,7 @@
     "@tsconfig/node20": "20.1.8",
     "@types/jsdom": "27.0.0",
     "@types/node": "24.10.1",
-    "@vitejs/plugin-vue": "6.0.1",
+    "@vitejs/plugin-vue": "6.0.2",
     "@vitest/coverage-v8": "4.0.10",
     "@vue/eslint-config-prettier": "10.2.0",
     "@vue/eslint-config-typescript": "13.0.0",
