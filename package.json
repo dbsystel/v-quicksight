@@ -79,7 +79,7 @@
     "@rushstack/eslint-patch": "1.15.0",
     "@tsconfig/node20": "20.1.8",
     "@types/jsdom": "27.0.0",
-    "@types/node": "24.10.2",
+    "@types/node": "24.10.3",
     "@vitejs/plugin-vue": "6.0.2",
     "@vitest/coverage-v8": "4.0.15",
     "@vue/eslint-config-prettier": "10.2.0",
