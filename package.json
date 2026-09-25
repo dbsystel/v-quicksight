@@ -81,7 +81,7 @@
     "@types/jsdom": "27.0.0",
     "@types/node": "24.13.4",
     "@vitejs/plugin-vue": "6.0.8",
-    "@vitest/coverage-v8": "4.0.15",
+    "@vitest/coverage-v8": "4.1.11",
     "@vue/eslint-config-prettier": "10.2.0",
     "@vue/eslint-config-typescript": "13.0.0",
     "@vue/test-utils": "2.5.0",
@@ -97,7 +97,7 @@
     "vite": "7.3.6",
     "vite-plugin-dts": "4.5.4",
     "vitepress": "1.6.4",
-    "vitest": "4.0.15",
+    "vitest": "4.1.11",
     "vue-tsc": "3.3.11"
   }
 }
